@@ -1,0 +1,30 @@
+# PID files
+stations/*/pids/
+
+# Now playing cache
+stations/*/nowplaying.txt
+
+# Log files
+stations/*/stream.log
+*.log
+
+# HLS output files
+output/*/*.m3u8
+output/*/*.ts
+
+# Background media (can be large files)
+# Uncomment if you don't want to commit media files
+# stations/*/background.jpg
+# stations/*/background.mp4
+# stations/*/background.png
+
+# Temporary files
+*.tmp
+*~
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
