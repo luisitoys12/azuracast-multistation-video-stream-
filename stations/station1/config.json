@@ -1,0 +1,61 @@
+{
+  "station_id": "station1",
+  "station_name": "Rock Radio Station",
+  "azuracast_nowplaying_url": "http://localhost/api/nowplaying/1",
+  "azuracast_api_key": "YOUR_API_KEY_HERE",
+  
+  "video": {
+    "background_image": "/home/runner/work/azuracast-multistation-video-stream-/azuracast-multistation-video-stream-/stations/station1/background.jpg",
+    "background_video": "",
+    "use_video_background": false,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "bitrate": "3000k",
+    "font_file": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "font_size": 48,
+    "text_color": "white",
+    "text_position": "x=(w-text_w)/2:y=h-100"
+  },
+  
+  "audio": {
+    "stream_url": "http://localhost:8000/radio.mp3",
+    "bitrate": "192k",
+    "sample_rate": "44100"
+  },
+  
+  "outputs": {
+    "rtmp": [
+      {
+        "enabled": false,
+        "name": "YouTube",
+        "url": "rtmp://a.rtmp.youtube.com/live2/YOUR_STREAM_KEY",
+        "video_bitrate": "2500k",
+        "audio_bitrate": "128k"
+      },
+      {
+        "enabled": false,
+        "name": "Facebook",
+        "url": "rtmps://live-api-s.facebook.com:443/rtmp/YOUR_STREAM_KEY",
+        "video_bitrate": "2500k",
+        "audio_bitrate": "128k"
+      }
+    ],
+    "hls": {
+      "enabled": true,
+      "output_dir": "/home/runner/work/azuracast-multistation-video-stream-/azuracast-multistation-video-stream-/output/station1",
+      "playlist_name": "stream.m3u8",
+      "segment_duration": 4,
+      "segment_list_size": 5,
+      "video_bitrate": "2000k",
+      "audio_bitrate": "128k"
+    }
+  },
+  
+  "nowplaying": {
+    "update_interval": 10,
+    "format": "Now Playing: {artist} - {title}",
+    "show_album": true,
+    "show_artwork": false
+  }
+}
